@@ -1,0 +1,72 @@
+/* Homepage art direction — restrained typography and a curated photographic sequence. */
+body.editorial-home{--background:#f8f7f4;--text:#20201e;--muted:#66645f;--name-color:#20201e;--line:#d6d3cc;--border:#b5b1a8;--surface:#efede7;--surface-hover:#e4e1d9;background:var(--background);--gutter:clamp(22px,4.5vw,80px)}
+[data-theme=dark] body.editorial-home{--background:#191918;--text:#eeede8;--muted:#aaa79f;--name-color:#eeede8;--line:#3d3c37;--border:#666359;--surface:#242420;--surface-hover:#30302a}
+.editorial-home .site-header{max-width:1600px;padding:20px var(--gutter);grid-template-columns:1fr auto auto;gap:30px;border-bottom:1px solid var(--line)}
+.editorial-home .identity .brand-name{font-size:12px;letter-spacing:.04em;white-space:normal;max-width:none}
+.editorial-home .identity p{display:none}
+.editorial-home .editorial-nav{grid-column:2;grid-row:1;gap:28px}
+.editorial-home .editorial-nav a{font-size:11px;color:var(--text)}
+.editorial-home .socials{grid-column:3;grid-row:1;gap:0}
+.editorial-home .socials a,.editorial-home .socials .theme-toggle{width:36px;flex-basis:36px}
+.editorial-home .socials svg{width:16px;height:16px}
+.author-opening{max-width:1600px;margin:auto;padding:44px var(--gutter) 100px}
+.author-masthead{font-family:Didot,'Bodoni MT','Times New Roman',serif;font-weight:400;font-size:clamp(70px,12.3vw,188px);line-height:.86;letter-spacing:-.065em;display:flex;justify-content:space-between;gap:24px;white-space:nowrap;padding-bottom:36px}
+.author-period{font-style:italic}
+.author-edition,.author-caption{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:9px;letter-spacing:.12em}
+.author-edition{padding:16px 0;border-top:1px solid var(--line)}
+.author-edition a,.author-caption a{text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.author-cover{display:block}
+.author-cover img{display:block;width:100%;height:auto;max-height:690px;object-fit:cover;aspect-ratio:2.1;object-position:center 65%}
+.author-caption{padding-top:12px}
+.author-caption>span:nth-child(2){font-family:Georgia,serif;font-size:15px;font-style:italic;letter-spacing:0}
+.editorial-home main{max-width:1600px;padding:0 var(--gutter)}
+.editorial-home .editorial-selection,.editorial-home .editorial-films,.editorial-home .editorial-explorer{padding:48px 0 110px;border-top:1px solid var(--line)}
+.editorial-home .editorial-section-heading{margin-bottom:48px}
+.editorial-home .editorial-section-heading #selection-title,.editorial-home .editorial-section-heading #films-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,3.3vw,48px);letter-spacing:-.045em;text-transform:none}
+.editorial-home .editorial-photo-grid{display:grid;grid-template-columns:1.1fr .8fr .9fr;gap:6%;align-items:start}
+.editorial-home .photo-offset{margin-top:140px}
+.editorial-home .photo-wide{margin-top:55px}
+.editorial-home .editorial-photo img{aspect-ratio:auto;height:auto;width:100%;object-fit:contain}
+.editorial-home .editorial-photo figcaption{text-align:left;border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
+.editorial-home .editorial-photo figcaption span{font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.editorial-home .editorial-explorer .map-stage{max-width:1000px;margin-inline:auto}
+.editorial-home .about-section{max-width:none;margin:0;padding:80px 0 100px;gap:12%;grid-template-columns:.8fr 1fr}
+.editorial-home .about-copy h2{font-size:clamp(36px,4.5vw,64px);letter-spacing:-.05em}
+.editorial-home .preset-section{max-width:780px;padding:60px 0 90px}
+.editorial-home #preset-title{font-size:32px;letter-spacing:-.03em}
+.editorial-home .editorial-footer{max-width:1600px;padding-inline:var(--gutter)}
+@media(min-width:1600px){.author-masthead{font-size:188px}}
+@media(max-width:900px){
+ .editorial-home .site-header{grid-template-columns:1fr auto;gap:4px 16px}
+ .editorial-home .socials{grid-column:2}
+ .editorial-home .editorial-nav{grid-row:2;grid-column:1/-1;justify-content:space-between;gap:12px}
+ .author-masthead{font-size:12vw;gap:12px}
+ .author-opening{padding-top:34px;padding-bottom:65px}
+ .editorial-home .photo-offset{margin-top:70px}
+}
+@media(max-width:599px){
+ .author-masthead{display:block;font-size:21vw;line-height:.9;letter-spacing:-.06em;padding-bottom:28px}
+ .author-masthead>span{display:block}.author-masthead>span:last-child{text-align:right}
+ .author-edition{font-size:8px;letter-spacing:.06em;gap:12px}.author-edition>span:nth-child(2){display:none}
+ .author-cover img{aspect-ratio:4/5;max-height:none;object-position:58% center}
+ .author-caption{font-size:8px;gap:8px;letter-spacing:.05em}.author-caption>span:nth-child(2){font-size:12px}
+ .editorial-home .editorial-selection,.editorial-home .editorial-films,.editorial-home .editorial-explorer{padding:32px 0 64px}
+ .editorial-home .editorial-section-heading{margin-bottom:30px}
+ .editorial-home .editorial-photo-grid{grid-template-columns:1fr 1fr;gap:32px 20px}
+ .editorial-home .photo-offset{margin-top:60px}
+ .editorial-home .photo-wide{grid-column:1/-1;width:76%;margin:12px auto 0}
+ .editorial-home .about-section{grid-template-columns:1fr;gap:36px;padding:48px 0 64px}
+ .editorial-home .about-portrait{width:80%;justify-self:start}
+ .editorial-home .preset-section{padding:48px 0 64px}
+}
+
+/* Quiet opening: small identity in the navigation, no decorative dividers. */
+.editorial-home .site-header,
+.editorial-home .author-edition,
+.editorial-home .editorial-selection,
+.editorial-home .editorial-films,
+.editorial-home .editorial-explorer,
+.editorial-home .editorial-photo figcaption,
+.editorial-home .about-section,
+.editorial-home .preset-section,
+.editorial-home .editorial-footer{border:0}

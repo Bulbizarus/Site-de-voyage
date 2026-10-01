@@ -1,0 +1,318 @@
+/* Shared homepage geometry. */
+body.editorial-home{
+  --gutter:clamp(22px,4.5vw,80px);
+  --page-width:1600px;
+  --lower-content-width:1000px;
+  --section-space:clamp(52px,6vw,88px);
+  --heading-space:clamp(24px,3vw,40px);
+}
+.editorial-home .site-header,
+.editorial-home main,
+.editorial-home .editorial-footer{
+  width:100%;
+  max-width:var(--page-width);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+.editorial-home .editorial-selection,
+.editorial-home .editorial-films,
+.editorial-home .editorial-explorer,
+.editorial-home .about-section,
+.editorial-home .preset-section{
+  max-width:none;
+  margin:0;
+  padding:0 0 var(--section-space);
+  border:0;
+}
+.editorial-home .editorial-section-heading,
+.editorial-home .preset-section .preset-heading{margin-bottom:var(--heading-space)}
+/* Presentation and preset share the same centered frame. */
+.editorial-home .about-section,
+.editorial-home .preset-section{
+  width:100%;
+  max-width:var(--lower-content-width);
+  margin-inline:auto;
+}
+.editorial-home #preset-title{
+  font-size:clamp(28px,2.4vw,34px);
+  line-height:1.18;
+  letter-spacing:-.8px;
+}
+/* Center the portrait and introduction as one balanced composition. */
+.editorial-home .about-section{
+  grid-template-columns:minmax(0,380px) minmax(0,1fr);
+  gap:clamp(32px,4vw,60px);
+  align-items:center;
+}
+.editorial-home .about-copy{width:100%;max-width:none}
+.editorial-home .about-copy .eyebrow{margin:0 0 16px}
+.editorial-home .about-copy h2{
+  font-size:clamp(28px,2.4vw,34px);
+  line-height:1.18;
+  letter-spacing:-.8px;
+  text-wrap:balance;
+  margin:0 0 22px;
+}
+.editorial-home .about-copy p:not(.eyebrow){
+  font-size:15px;
+  line-height:1.75;
+  margin:0 0 16px;
+}
+.editorial-home .about-copy p.about-lead{font-size:16px;line-height:1.6}
+.editorial-home .about-copy .about-signature{font-size:21px;margin-top:22px}
+@media(max-width:900px){
+  body.editorial-home{--lower-content-width:560px}
+  .editorial-home .about-section{grid-template-columns:minmax(0,1fr);gap:28px}
+  .editorial-home .about-copy{width:100%;max-width:none}
+  .editorial-home .about-copy h2{font-size:clamp(28px,4vw,34px)}
+  .editorial-home .about-copy p:not(.eyebrow){font-size:15px}
+  .editorial-home .about-copy p.about-lead{font-size:17px}
+}
+.editorial-home .about-portrait{margin:0;width:100%;max-width:380px;justify-self:start}
+.editorial-home .about-portrait img{max-height:none}
+@media(max-width:900px){
+  .editorial-home .about-portrait{max-width:360px}
+}
+.editorial-home .media-rail{margin-inline:0;padding-inline:0}
+.editorial-home .socials{margin-right:0}
+
+.editorial-home main{padding-top:44px}
+@media(max-width:900px){
+  .editorial-home main{padding-top:34px}
+}
+
+/* Minimal homepage film captions and unobtrusive carousel arrows. */
+.editorial-home #home-films figcaption{
+  display:block;text-align:center;margin-top:12px;
+  font-size:10px;letter-spacing:1px;color:var(--muted);
+}
+.editorial-home #home-films .film-watch,
+.editorial-home #home-films .film-duration{display:none}
+.editorial-home .rail-controls button{
+  top:var(--arrow-center,50%);
+  border:0;border-radius:0;background:transparent;box-shadow:none;
+  color:rgba(255,255,255,.5);font-size:25px;
+  text-shadow:0 1px 4px rgba(0,0,0,.35);
+}
+.editorial-home .rail-controls button:hover:not(:disabled){
+  background:transparent;border:0;color:rgba(255,255,255,.8);
+}
+
+/* Center the country search above the map on every screen size. */
+.editorial-home .editorial-explorer > .editorial-section-heading{
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+}
+.editorial-home .editorial-explorer .search{
+  width:min(320px,100%);
+  margin-inline:auto;
+}
+
+/* Contact icons share the header and footer social styling. */
+.editorial-home .socials .mail-contact{
+  display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;
+  padding:0;margin:0;border:0;background:transparent;color:var(--muted);
+}
+.editorial-home .mail-contact svg{fill:none;stroke:currentColor}
+.editorial-home .socials .mail-contact:hover,
+.editorial-home .socials .mail-contact:focus-visible{color:var(--text)}
+.editorial-home .editorial-footer{flex-wrap:wrap}
+.editorial-home .footer-socials{
+  flex-basis:100%;justify-content:center;gap:8px;margin:8px 0 0;
+}
+.editorial-home .footer-socials a{display:grid;place-items:center}
+@media(max-width:599px){
+  .editorial-home .footer-socials{width:100%;flex-basis:auto}
+}
+
+/* Keep the opening map and destination flags within the first screen. */
+.editorial-home .site-header{padding-top:20px;padding-bottom:8px}
+.editorial-home main{padding-top:16px}
+.editorial-home .editorial-explorer > .editorial-section-heading{margin-bottom:4px}
+.editorial-home .editorial-explorer .map-stage{margin-top:0}
+.editorial-home .editorial-explorer .map-controls{min-height:0;margin-top:0}
+.editorial-home .editorial-explorer .map-controls:has(#reset-view[hidden]){display:none}
+.editorial-home .editorial-explorer .map-discover{margin-top:8px;gap:12px 32px}
+.editorial-home .editorial-explorer .map-discover a{padding-block:6px}
+@media(min-width:900px){
+  .editorial-home .editorial-explorer .map-stage:not(.country-mode){
+    max-width:clamp(560px,calc((100svh - 340px) * 2.30769),1400px);
+    margin-inline:auto;
+  }
+}
+
+/* Keep sound controls with the other header icons, outside the map. */
+.editorial-home .site-header .entry-sound-button{
+  position:static;transform:none;flex:0 0 44px;
+  margin:0;padding:0;color:var(--muted);
+}
+.editorial-home .site-header .entry-sound-button:hover,
+.editorial-home .site-header .entry-sound-button:focus-visible{color:var(--text)}
+.editorial-home .editorial-explorer .map-stage{padding-top:0}
+@media(max-width:599px){
+  .editorial-home .site-header .identity{grid-column:1/-1;grid-row:1}
+  .editorial-home .site-header .socials{grid-column:1/-1;grid-row:2;justify-self:start}
+  .editorial-home .site-header .editorial-nav{grid-row:3}
+}
+
+/* Country search without an underline. */
+.editorial-home .editorial-explorer .search-field{border-bottom:0}
+
+
+
+/* Compact scrolling, with a full-screen frame for menu navigation. */
+html:has(body.editorial-home){scroll-padding-top:0}
+.editorial-home main > section{
+  box-sizing:border-box;
+  min-height:0;
+  scroll-margin-top:0;
+  padding-block:clamp(24px,4svh,40px);
+}
+.editorial-home #selection,
+.editorial-home #films,
+.editorial-home #preset{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.editorial-home #selection .media-rail-viewport,
+.editorial-home #films .media-rail-viewport{width:100%}
+.editorial-home #home-photos img{
+  width:100%;
+  height:auto;
+  aspect-ratio:2/3;
+  object-fit:contain;
+}
+/* Three portrait columns fill their frame without side gaps inside each image. */
+@media(min-width:900px){
+  .editorial-home #selection{
+    width:100%;
+    max-width:calc(140svh + 28px);
+    margin-inline:auto;
+  }
+}
+@media(min-width:600px) and (max-width:899px){
+  .editorial-home #selection{
+    width:100%;
+    max-width:calc(93.333svh + 14px);
+    margin-inline:auto;
+  }
+}
+.editorial-home #home-films{
+  width:100%;
+  max-width:calc(112svh * 16 / 9);
+  margin-inline:auto;
+}
+.editorial-home #about{align-content:center}
+.editorial-home #preset .preset-comparison{max-height:60svh}
+.editorial-home #explorer{
+  min-height:calc(100svh - var(--home-header-height,150px) - 16px);
+  padding-top:0;
+  padding-bottom:24px;
+}
+
+.editorial-home main > section.is-navigation-focus{
+  min-height:100svh;
+  padding-block:clamp(32px,6svh,64px);
+}
+.editorial-home{overflow-anchor:none}
+
+.editorial-home #countries g{stroke-width:.75}
+.editorial-home #countries .has-media{stroke-width:1}
+
+.editorial-home .site-header .socials a:hover,
+.editorial-home .site-header .socials button:hover,
+.editorial-home .footer-socials a:hover,
+.editorial-home .footer-socials button:hover{color:var(--accent-warm)}
+
+/* Presentation heading follows the photographs and films section labels. */
+.editorial-home #about .about-section-heading{
+  grid-column:1/-1;
+  margin:0;
+  align-self:end;
+}
+.editorial-home #about-section-title{
+  font-family:var(--font-reading);
+  font-size:10px;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:2px;
+  margin:0;
+}
+.editorial-home #about{row-gap:var(--heading-space)}
+
+/* Destination names use the same typeface as the main navigation. */
+.editorial-home .editorial-explorer .map-discover strong{
+  font-family:var(--font-reading);
+  font-size:22px;
+  font-weight:400;
+  line-height:1.4;
+}
+
+/* Center counts beneath the country name, independently of its flag. */
+.editorial-home .editorial-explorer .map-discover a{
+  align-items:center;
+  gap:2px;
+  text-align:center;
+}
+.editorial-home .editorial-explorer .map-discover strong{
+  position:relative;
+  line-height:1.2;
+}
+.editorial-home .editorial-explorer .map-discover strong .country-flag{
+  position:absolute;
+  left:100%;
+  top:50%;
+  transform:translateY(-50%);
+  margin-left:7px;
+}
+.editorial-home .editorial-explorer .map-discover a > span{
+  margin:0;
+  line-height:1.4;
+}
+
+/* Align each section label with its own content frame. */
+.editorial-home #about{
+  width:100%;
+  max-width:var(--lower-content-width);
+  margin-inline:auto;
+  grid-template-columns:minmax(0,1fr);
+}
+.editorial-home #about .about-section-heading{width:100%}
+.editorial-home #about .about-content{
+  display:grid;
+  grid-template-columns:minmax(0,380px) minmax(0,1fr);
+  gap:clamp(32px,4vw,60px);
+  align-items:center;
+  width:100%;
+  max-width:var(--lower-content-width);
+  margin-inline:auto;
+}
+@media(max-width:900px){
+  .editorial-home #about .about-content{
+    grid-template-columns:minmax(0,1fr);
+    gap:28px;
+  }
+}
+
+.editorial-home #films{
+  width:100%;
+  max-width:calc(112svh * 16 / 9);
+  margin-inline:auto;
+}
+
+/* Align the comparator label with its content, like other section headings. */
+.editorial-home #preset .preset-heading{
+  width:100%;
+  align-items:flex-start;
+  text-align:left;
+}
+.editorial-home #preset .preset-heading .eyebrow{
+  margin:0;
+  font-family:var(--font-reading);
+  font-size:10px;
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:2px;
+}

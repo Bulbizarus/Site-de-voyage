@@ -1,0 +1,9 @@
+Carte : Natural Earth, Admin 0 – Countries, 1:50m.
+Auteurs principaux : Tom Patterson, Nathaniel Vaughn Kelso et contributeurs Natural Earth.
+Source exacte : https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson
+Présentation : https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/
+Licence vérifiée le 20 septembre 2026 : https://www.naturalearthdata.com/about/terms-of-use/
+Domaine public. Utilisation, adaptation et redistribution autorisées ; aucune attribution obligatoire.
+Noms traduits : Natural Earth / Wikidata, CC0.
+Adaptation : projection Robinson interpolée, conversion de tous les polygones en tracés SVG ; arrondi des coordonnées à 0,01 unité. Aucun territoire retiré ni frontière redessinée.
+Référentiel ISO : assets/iso3166.tab, base IANA tz, révision du 1 juillet 2025, 249 codes. Domaine public (Arthur David Olson, 2009). https://data.iana.org/time-zones/tzdb/iso3166.tab

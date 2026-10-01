@@ -1,0 +1,61 @@
+/* Unified neutral palettes shared by the map and all galleries. */
+:root{
+  color-scheme:dark;
+  --background:#202121;--text:#d5d3cd;--name-color:#c4beb0;--muted:#a3a19a;
+  --land:#303232;--border:#505352;--featured:#444746;--active:#969991;--line:#414342;
+  --surface:#272929;--surface-hover:#343636;--media-land:#787e77;--media-border:#a2a79f;
+  --edge-light:transparent;--shadow-soft:0 8px 24px -16px #0006;
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --background:#d6d3ca;--text:#363733;--name-color:#505149;--muted:#4c4e47;
+  --land:#c1c1b8;--border:#9b9e94;--featured:#b1b4a9;--active:#8b9285;--line:#b6b7ad;
+  --surface:#cecdc3;--surface-hover:#c2c3b9;--media-land:#8d9687;--media-border:#737d6c;
+  --shadow-soft:0 8px 24px -16px #36373326;
+}
+body{background-image:none}
+.identity h1{ text-shadow:none }
+.socials a{color:var(--text)}
+.socials a:hover,.socials a:focus-visible{color:var(--name-color)}
+.site-header::after,.about-section::before,.preset-section::before{background:var(--line);box-shadow:none}
+.search-field{background:transparent;box-shadow:none}
+.search-field:focus-within{border-color:var(--name-color);box-shadow:none}
+#suggestions,#no-results,.country-label{background:var(--surface);border-color:var(--line);box-shadow:var(--shadow-soft)}
+#suggestions li:hover,#suggestions li[aria-selected=true]{background:var(--surface-hover)}
+#countries{filter:none}
+#countries g{fill:var(--land);stroke:var(--border)}
+#countries .featured{fill:var(--featured)}
+#countries .has-media{fill:var(--media-land);stroke:var(--media-border)}
+#countries .selected{fill:var(--active);stroke:var(--name-color)}
+#countries .featured:focus-visible{stroke:var(--name-color)}
+#hover-layer,#selection-layer{fill:var(--active);stroke:var(--name-color);filter:none}
+#marker .marker-ring{stroke:var(--name-color)}
+.detail-land{fill:var(--land);stroke:var(--border);filter:none}
+.detail-city text{stroke:var(--background)}
+.detail-city:hover .city-dot,.detail-city.active .city-dot,.detail-city.focused .city-dot{fill:var(--name-color);stroke:var(--background)}
+.country-facts dt{color:var(--muted)}
+.explorer-controls button{background:transparent;box-shadow:none}
+.explorer-controls button:hover{background:var(--surface-hover);border-color:var(--border);box-shadow:none}
+.photo-open{background:transparent}
+.photo-open img,.about-portrait img,.photo-open:hover img{box-shadow:var(--shadow-soft)}
+.country-choice,.preset-comparison{border-color:var(--line);background-color:var(--surface);box-shadow:none}
+.country-choice:hover,.country-choice:focus-visible{background-color:var(--surface-hover)}
+.country-choice:not(.has-cover) .choice-title{text-shadow:none}
+.country-choice:not(.has-cover):hover::after,.country-choice:not(.has-cover):focus-visible::after{border-color:var(--name-color)}
+/* Keep text over photographs independent of the page palette. */
+.country-choice.has-cover{--text:#eeede7;--muted:#d5d3cd;--name-color:#eeede7}
+.comparison-label{color:#eeede7}
+.film-poster{background:var(--surface)}
+.film-poster:hover .film-play,.film-poster:focus-visible .film-play{color:#eeede7;border-color:#eeede7}
+#photo-viewer,#photo-viewer::backdrop{background:var(--background)}
+.theme-toggle{display:grid;place-items:center;flex-shrink:0;width:62px;height:44px;padding:0;color:var(--text)}
+.theme-track{position:relative;display:flex;align-items:center;justify-content:space-between;width:56px;height:28px;padding:5px;border:1px solid var(--border);border-radius:20px;background:var(--surface)}
+.theme-toggle svg{position:relative;width:16px;height:16px;stroke:currentColor;stroke-width:1.5;fill:none;z-index:1}
+.theme-thumb{position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:var(--text);transition:transform var(--duration)}
+.theme-moon{color:var(--background)}.theme-sun{color:var(--muted)}
+.theme-toggle:hover .theme-track{border-color:var(--name-color)}
+[data-theme="light"] .theme-thumb{transform:translateX(28px)}
+[data-theme="light"] .theme-moon{color:var(--muted)}
+[data-theme="light"] .theme-sun{color:var(--background)}
+@media(max-width:599px){.socials{flex-wrap:wrap;max-width:88px;justify-content:flex-end}.theme-toggle{width:88px;order:1}}
+@media(forced-colors:active){.theme-track{border-color:ButtonText}.theme-thumb{background:Highlight}}
